@@ -1,1 +1,1 @@
-# power-outages-project
+# power-outages-analysis
