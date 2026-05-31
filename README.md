@@ -105,7 +105,9 @@ To make this column MAR, we would want additional data such as the utility compa
 
 We analyzed the missingness of **`CUSTOMERS.AFFECTED`** (missing in 443 of 1,534 rows, ~29%).
 
-**Test 1 — Does missingness of `CUSTOMERS.AFFECTED` depend on `CAUSE.CATEGORY`?**
+**Null Hypothesis:** The distribution of Cause Category is the same when Customers Affected is missing vs. not missing.
+
+**Alternate Hypothesis:** The distribution of Cause Category is different when Customers Affected is missing vs. not missing.
 
 *Test statistic:* Total Variation Distance (TVD) between the cause category distribution when `CUSTOMERS.AFFECTED` is missing vs. not missing. TVD is appropriate here because `CAUSE.CATEGORY` is a categorical column and we want to measure how different the two distributions look overall.
 
@@ -115,7 +117,9 @@ The observed TVD was **0.5574** with a **p-value ≈ 0.000** (1,000 permutations
 
 The null distribution of TVD values under random shuffling is tightly clustered near 0, while the observed TVD of 0.557 falls far in the right tail — confirming that the two distributions are very different. Intentional attacks make up a much larger share of rows where `CUSTOMERS.AFFECTED` is missing (~60%) than where it is present (~20%), confirming that missingness is **MAR** on cause category — utilities reporting intentional attacks consistently omit customer counts, likely for security or reporting reasons.
 
-**Test 2 — Does missingness of `CUSTOMERS.AFFECTED` depend on `IND.PERCEN`?**
+**Null Hypothesis:** The distribution of Industrial Percentage is the same when Customers Affected is missing vs. not missing.
+
+**Alternate Hypothesis:** The distribution of Industrial Percentage is different when Customers Affected is missing vs. not missing.
 
 *Test statistic:* Absolute difference in mean `IND.PERCEN` (industrial electricity consumption percentage) between rows where `CUSTOMERS.AFFECTED` is missing vs. not missing.
 
