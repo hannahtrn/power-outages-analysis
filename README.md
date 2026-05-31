@@ -123,7 +123,7 @@ The null distribution of TVD values under random shuffling is tightly clustered 
 
 *Test statistic:* Absolute difference in mean `IND.PERCEN` (industrial electricity consumption percentage) between rows where `CUSTOMERS.AFFECTED` is missing vs. not missing.
 
-The observed |diff| was **0.117** with a **p-value ≈ 0.818** (1,000 permutations). We fail to reject the null hypothesis — missingness does not depend on `IND.PERCEN`.
+The observed \|diff\| was **0.117** with a **p-value ≈ 0.818** (1,000 permutations). We fail to reject the null hypothesis — missingness does not depend on `IND.PERCEN`.
 
 <iframe src="assets/missingness_test2_null.html" width="800" height="450" frameborder="0"></iframe>
 
